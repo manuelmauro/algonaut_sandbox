@@ -6,7 +6,7 @@ keywords = ["Algorand", "sdk"]
 license = "MIT"
 name = "algonaut_sandbox"
 repository = "https://github.com/manuelmauro/algonaut"
-version = "0.4.2"
+version = "0.2.0"
 
 [dependencies]
 algonaut = "0.4.2"
