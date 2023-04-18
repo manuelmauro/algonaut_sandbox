@@ -38,3 +38,9 @@ pub async fn get_unencrypted_default_wallet(
 
     Err(SandboxError::General("could not find wallet".into()))
 }
+
+pub async fn is_sandbox(algod: &Algod) -> Result<bool, SandboxError> {
+    let genesis_id = algod.versions().await?.genesis_id;
+
+    Ok(genesis_id == "sandnet-v1")
+}
