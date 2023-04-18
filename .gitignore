@@ -1,0 +1,20 @@
+# rust
+/target
+**/*.rs.bk
+Cargo.lock
+
+# examples output
+signed.tx
+
+# environment
+**/.env
+
+# editor
+*.code-workspace
+.devcontainer/
+.vscode
+/.idea
+*.iml
+
+# os
+**.DS_Store

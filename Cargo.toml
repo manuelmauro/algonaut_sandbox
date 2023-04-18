@@ -1,0 +1,14 @@
+[package]
+authors = ["Manuel Mauro <manuel.mauro@protonmail.com>"]
+description = "Utility functions for the Algorand Sandbox."
+edition = "2021"
+keywords = ["Algorand", "sdk"]
+license = "MIT"
+name = "algonaut_sandbox"
+repository = "https://github.com/manuelmauro/algonaut"
+version = "0.4.2"
+
+[dependencies]
+algonaut = "0.4.2"
+derive_more = "0.99.13"
+thiserror = "1.0.23"
