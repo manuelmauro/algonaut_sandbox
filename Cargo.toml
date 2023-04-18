@@ -5,7 +5,7 @@ edition = "2021"
 keywords = ["Algorand", "sdk"]
 license = "MIT"
 name = "algonaut_sandbox"
-repository = "https://github.com/manuelmauro/algonaut"
+repository = "https://github.com/manuelmauro/algonaut_sandbox"
 version = "0.2.0"
 
 [dependencies]
