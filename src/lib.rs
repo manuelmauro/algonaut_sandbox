@@ -8,8 +8,8 @@ const KMD_URL: &str = "http://localhost:4002";
 const KMD_TOKEN: &str = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 
 pub struct Sandbox {
-    algod: Algod,
-    kmd: Kmd,
+    pub algod: Algod,
+    pub kmd: Kmd,
 }
 
 impl Sandbox {
