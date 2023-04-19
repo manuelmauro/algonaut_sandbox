@@ -49,14 +49,13 @@ impl Sandbox {
                 .await?;
 
             if info.status == "Online" {
-                let pk = self
+                let key_pair = self
                     .kmd
                     .export_key(handle.as_str(), "", &info.address)
                     .await?
                     .private_key;
-                let seed = pk[0..32].try_into().unwrap();
 
-                return Ok(Account::from_seed(seed));
+                return Account::from_key_pair(key_pair).map_err(|e| e.into());
             }
         }
 

@@ -13,3 +13,9 @@ impl From<algonaut::error::ServiceError> for SandboxError {
         SandboxError::General(error.to_string())
     }
 }
+
+impl From<algonaut::transaction::error::TransactionError> for SandboxError {
+    fn from(error: algonaut::transaction::error::TransactionError) -> Self {
+        SandboxError::General(error.to_string())
+    }
+}
