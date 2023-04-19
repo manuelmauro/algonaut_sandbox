@@ -12,3 +12,6 @@ version = "0.2.1"
 algonaut = "0.4.2"
 derive_more = "0.99.13"
 thiserror = "1.0.23"
+
+[patch.crates-io]
+algonaut = { git = "https://github.com/manuelmauro/algonaut.git" }
