@@ -24,7 +24,7 @@ impl Sandbox {
         }
     }
 
-    pub async fn unencrypted_default_wallet(self) -> Result<Account, SandboxError> {
+    pub async fn unencrypted_default_wallet(&self) -> Result<Account, SandboxError> {
         let list_response = self.kmd.list_wallets().await?;
 
         let wallet_id = list_response
