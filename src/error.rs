@@ -8,8 +8,8 @@ pub enum SandboxError {
     General(String),
 }
 
-impl From<algonaut::error::ServiceError> for SandboxError {
-    fn from(error: algonaut::error::ServiceError) -> Self {
+impl From<algonaut::Error> for SandboxError {
+    fn from(error: algonaut::Error) -> Self {
         SandboxError::General(error.to_string())
     }
 }

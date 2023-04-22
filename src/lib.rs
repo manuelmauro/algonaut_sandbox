@@ -43,15 +43,12 @@ impl Sandbox {
         let keys = self.kmd.list_keys(handle.as_str()).await?.addresses;
 
         for addr in keys {
-            let info = self
-                .algod
-                .account_information(&addr.parse().unwrap())
-                .await?;
+            let info = self.algod.account_information(&addr).await?;
 
             if info.status == "Online" {
                 let key_pair = self
                     .kmd
-                    .export_key(handle.as_str(), "", &info.address)
+                    .export_key(handle.as_str(), "", &info.address.parse().unwrap())
                     .await?
                     .private_key;
 
@@ -73,7 +70,7 @@ impl Default for Sandbox {
 }
 
 pub async fn is_sandbox(algod: &Algod) -> Result<bool, SandboxError> {
-    let genesis_id = algod.versions().await?.genesis_id;
+    let genesis_id = algod.get_version().await?.genesis_id;
 
     Ok(genesis_id == "sandnet-v1")
 }
